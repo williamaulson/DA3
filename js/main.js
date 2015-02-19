@@ -163,6 +163,8 @@ window.onload = function()
     var speedText;
     var statusStyle = { font: "13px Arial", fill: "#333300", align: "center" };
     var titleStyle = { font: "20px Arial", fill: "#000000", align: "center" };
+    var statusText;
+    var statusText2;
     
     function create()
     {
