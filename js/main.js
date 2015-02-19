@@ -158,6 +158,10 @@ window.onload = function()
     var moveB;
     var rateB;
     var speedB;
+    var moveText;
+    var rateText;
+    var speedText;
+    var statusStyle = { font: "15px Arial", fill: "#000000", align: "center" };
     
     function create()
     {
@@ -879,6 +883,8 @@ window.onload = function()
     	    {
     	    	    moveB.x = b1.x;
     	    	    moveB.y = b1.y;
+    	    	    moveText = game.add.text(15, 10, 'Move Boost!', statusStyle);
+    	    	    moveText.anchor.set(0.5);
     	    	    moveUp = 1.5;
     	    	    game.time.events.add(Phaser.Timer.SECOND * 7, resetMove1, null);
     	    	    b1Time = game.time.now + 7000;
