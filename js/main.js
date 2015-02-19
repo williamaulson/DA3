@@ -62,6 +62,8 @@ window.onload = function()
     	    game.load.spritesheet('dude2', 'assets/dude2.png', 32, 48);
     	    game.load.spritesheet('star', 'assets/star.png', 50, 50, 4, 0, 1);
     	    game.load.spritesheet('star2', 'assets/star2.png', 50, 50, 4, 0, 1);
+    	    game.load.audio('music', 'assets/music.mp3');
+    	    game.load.audio('death', 'assets/death.mp3');
     	    
     }
     
@@ -165,6 +167,8 @@ window.onload = function()
     var titleStyle = { font: "20px Arial", fill: "#000000", align: "center" };
     var statusText;
     var statusText2;
+    var music;
+    var death;
     
     function create()
     {
@@ -245,7 +249,11 @@ window.onload = function()
     	    statusText = game.add.text(15, 10, 'Player 2 Kills: ' + player2Killed, titleStyle);
     	    statusText2 = game.add.text(872, 10, 'Player 1 Kills: ' + player1Killed, titleStyle);
     	    
+    	    death = game.add.audio('death');
+    	    death.allowMultiple = true;
     	    
+    	    music = game.add.audio('music');
+    	    music.play('',0,1,true);
     	    
     	    
     	    
@@ -863,6 +871,7 @@ window.onload = function()
     
     function killPlayer1(player, shot)
     {
+    	    death.play();
     	    shot.destroy();
     	    player1Blood();
     	    player1.body.x = 50;
@@ -872,6 +881,7 @@ window.onload = function()
     
     function killPlayer2(player, shot)
     {
+    	    death.play();
     	    shot.destroy();
     	    player2Blood();
     	    player2.body.x = 950;
