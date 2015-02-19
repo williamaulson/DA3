@@ -161,7 +161,7 @@ window.onload = function()
     var moveText;
     var rateText;
     var speedText;
-    var statusStyle = { font: "13px Arial", fill: "#003300", align: "center" };
+    var statusStyle = { font: "13px Arial", fill: "#333300", align: "center" };
     
     function create()
     {
@@ -934,6 +934,8 @@ window.onload = function()
     	    	    rateB.x = b2.x;
     	    	    rateB.y = b2.y;
     	    	    rateUp2 = 0.5;
+    	    	    rateText = game.add.text(850, 550, 'Speed Boost!', statusStyle);
+    	    	    rateText.anchor.set(0.5);
     	    	    game.time.events.add(Phaser.Timer.SECOND * 7, resetRate2, null);
     	    	    b2Time = game.time.now + 7000;
     	    }
@@ -946,6 +948,8 @@ window.onload = function()
     	    	    speedB.x = b3.x;
     	    	    speedB.y = b3.y;
     	    	    speedUp2 = 1.5;
+    	    	    speedText = game.add.text(950, 550, 'Speed Boost!', statusStyle);
+    	    	    speedText.anchor.set(0.5);
     	    	    game.time.events.add(Phaser.Timer.SECOND * 7, resetSpeed2, null);
     	    	    b3Time = game.time.now + 7000;
     	    }
@@ -956,6 +960,7 @@ window.onload = function()
     	    moveUp = 1.0;
     	    moveB.x = -500;
     	    moveB.y = -500;
+    	    moveText.destroy();
     }
     
      function resetRate1()
@@ -963,6 +968,7 @@ window.onload = function()
     	    rateUp = 1.0;
     	    rateB.x = -500;
     	    rateB.y = -500;
+    	    rateText.destroy();
     }
     
      function resetSpeed1()
@@ -970,20 +976,23 @@ window.onload = function()
     	    speedUp = 1.0;
     	    speedB.x = -500;
     	    speedB.y = -500;
+    	    speedText.destroy();
     }
     
      function resetMove2()
     {
     	    moveUp2 = 1.0;
     	    moveB.x = -500;
-    	    moveB.y = -500;  
+    	    moveB.y = -500;
+    	    moveText.destroy();
     }
     
      function resetRate2()
     {
     	    rateUp2 = 1.0;
     	    rateB.x = -500;
-    	    rateB.y = -500;  
+    	    rateB.y = -500;
+    	    rateText.destroy();
     }
     
      function resetSpeed2()
@@ -991,6 +1000,7 @@ window.onload = function()
     	    speedUp2 = 1.0;
     	    speedB.x = -500;
     	    speedB.y = -500;
+    	    speedText.destroy();
     }
      
    /* function getSpawnKey()
