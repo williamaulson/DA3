@@ -883,9 +883,9 @@ window.onload = function()
     	    {
     	    	    moveB.x = b1.x;
     	    	    moveB.y = b1.y;
-    	    	    moveText = game.add.text(950, 550, 'Move Boost!', statusStyle);
-    	    	    moveText.anchor.set(0.5);
     	    	    moveUp = 1.5;
+    	    	    moveText = game.add.text(74, 550, 'Move Boost!', statusStyle);
+    	    	    moveText.anchor.set(0.5);
     	    	    game.time.events.add(Phaser.Timer.SECOND * 7, resetMove1, null);
     	    	    b1Time = game.time.now + 7000;
     	    }
@@ -898,6 +898,8 @@ window.onload = function()
     	    	    rateB.x = b2.x;
     	    	    rateB.y = b2.y;
     	    	    rateUp = 0.5;
+    	    	    rateText = game.add.text(174, 550, 'Rate Boost!', statusStyle);
+    	    	    rateText.anchor.set(0.5);
     	    	    game.time.events.add(Phaser.Timer.SECOND * 7, resetRate1, null);
     	    	    b2Time = game.time.now + 7000;
     	    }
@@ -910,6 +912,8 @@ window.onload = function()
     	    	    speedB.x = b3.x;
     	    	    speedB.y = b3.y;
     	    	    speedUp = 1.5;
+    	    	    speedText = game.add.text(274, 550, 'Rate Boost!', statusStyle);
+    	    	    speedText.anchor.set(0.5);
     	    	    game.time.events.add(Phaser.Timer.SECOND * 7, resetSpeed1, null);
     	    	    b3Time = game.time.now + 7000;
     	    }
@@ -922,6 +926,8 @@ window.onload = function()
     	    	    moveB.x = b1.x;
     	    	    moveB.y = b1.y;
     	    	    moveUp2 = 1.5;
+    	    	    moveText = game.add.text(750, 550, 'Move Boost!', statusStyle);
+    	    	    moveText.anchor.set(0.5);
     	    	    game.time.events.add(Phaser.Timer.SECOND * 7, resetMove2, null);
     	    	    b1Time = game.time.now + 7000;
     	    }
@@ -934,7 +940,7 @@ window.onload = function()
     	    	    rateB.x = b2.x;
     	    	    rateB.y = b2.y;
     	    	    rateUp2 = 0.5;
-    	    	    rateText = game.add.text(850, 550, 'Speed Boost!', statusStyle);
+    	    	    rateText = game.add.text(850, 550, 'Rate Boost!', statusStyle);
     	    	    rateText.anchor.set(0.5);
     	    	    game.time.events.add(Phaser.Timer.SECOND * 7, resetRate2, null);
     	    	    b2Time = game.time.now + 7000;
