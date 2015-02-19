@@ -206,7 +206,8 @@ window.onload = function()
 
     	     statusText.setText('Player 2 Kills: ' + player2Killed);
     	     statusText2.setText('Player 1 Kills: ' + player1Killed);
-    	    
+    	     
+    	       
     	     game.physics.arcade.collide(player1, w1, null, null, this);
     	     game.physics.arcade.collide(player1, w2, null, null, this);
     	     game.physics.arcade.collide(player1, w3, null, null, this);

@@ -283,7 +283,7 @@ window.onload = function()
     	    	    player1.body.velocity.y = 200 * moveUp;
     	    	    player1.body.velocity.x = 200 * moveUp;
     	    	    player1.animations.play('right');
-    	    	    if ((game.time.now > player1ShootTime) && spaceKey.isDown && player1MaxCount <= player1Max)
+    	    	    if ((game.time.now > player1ShootTime) && spaceKey.isDown)
     	    	    {
     	    	    	    player1MaxCount = player1MaxCount + 1;
     	    	    	    player1Shoot = player1ShootGroup.create(player1.x + 25, player1.y + 25, 'star');
@@ -303,7 +303,7 @@ window.onload = function()
     	    	    player1.body.velocity.y = 200 * moveUp;
     	    	    player1.body.velocity.x = -200 * moveUp;
     	    	    player1.animations.play('left');
-    	    	    if ((game.time.now > player1ShootTime) && spaceKey.isDown && player1MaxCount <= player1Max)
+    	    	    if ((game.time.now > player1ShootTime) && spaceKey.isDown)
     	    	    {
     	    	    	    player1MaxCount = player1MaxCount + 1;
     	    	    	    player1Shoot = player1ShootGroup.create(player1.x - 25, player1.y + 25, 'star');
@@ -322,7 +322,7 @@ window.onload = function()
     	    {
     	    	    player1.body.velocity.y = -200 * moveUp;
     	    	    player1.frame = 4;
-    	    	    if ((game.time.now > player1ShootTime) && spaceKey.isDown && player1MaxCount <= player1Max)
+    	    	    if ((game.time.now > player1ShootTime) && spaceKey.isDown)
     	    	    {
     	    	    	    player1MaxCount = player1MaxCount + 1;
     	    	    	    player1Shoot = player1ShootGroup.create(player1.x, player1.y - 25, 'star');
@@ -341,7 +341,7 @@ window.onload = function()
     	    {
     	    	    player1.body.velocity.y = 200 * moveUp;
     	    	    player1.frame = 4;
-    	    	    if ((game.time.now > player1ShootTime) && spaceKey.isDown && player1MaxCount <= player1Max)
+    	    	    if ((game.time.now > player1ShootTime) && spaceKey.isDown)
     	    	    {
     	    	    	    player1MaxCount = player1MaxCount + 1;
     	    	    	    player1Shoot = player1ShootGroup.create(player1.x, player1.y + 25, 'star');
@@ -360,7 +360,7 @@ window.onload = function()
     	    {
     	    	    player1.body.velocity.x = -200 * moveUp;
     	    	    player1.animations.play('left');
-    	    	    if ((game.time.now > player1ShootTime) && spaceKey.isDown && player1MaxCount <= player1Max)
+    	    	    if ((game.time.now > player1ShootTime) && spaceKey.isDown)
     	    	    {
     	    	    	    player1MaxCount = player1MaxCount + 1;
     	    	    	    player1Shoot = player1ShootGroup.create(player1.x - 25, player1.y, 'star');
@@ -379,7 +379,7 @@ window.onload = function()
     	    {
     	    	    player1.body.velocity.x = 200 * moveUp;
     	    	    player1.animations.play('right');
-    	    	    if ((game.time.now > player1ShootTime) && spaceKey.isDown && player1MaxCount <= player1Max)
+    	    	    if ((game.time.now > player1ShootTime) && spaceKey.isDown)
     	    	    {
     	    	    	    player1MaxCount = player1MaxCount + 1;
     	    	    	    player1Shoot = player1ShootGroup.create(player1.x + 25, player1.y, 'star');
@@ -397,7 +397,7 @@ window.onload = function()
     	    else
     	    {
     	    	    player1.frame = 4;
-    	    	    if ((game.time.now > player1ShootTime) && spaceKey.isDown && player1MaxCount <= player1Max)
+    	    	    if ((game.time.now > player1ShootTime) && spaceKey.isDown)
     	    	    {
     	    	    	    player1MaxCount = player1MaxCount + 1;
     	    	    	    player1Shoot = player1ShootGroup.create(player1.x, player1.y + 25, 'star');
@@ -420,7 +420,7 @@ window.onload = function()
     	    	    player2.body.velocity.y = -200 * moveUp2;
     	    	    player2.body.velocity.x = 200 * moveUp2;
     	    	    player2.animations.play('right');
-    	    	    if ((game.time.now > player2ShootTime) && enterKey.isDown && player2MaxCount <= player2Max)
+    	    	    if ((game.time.now > player2ShootTime) && enterKey.isDown)
     	    	    {
     	    	    	    player2MaxCount = player2MaxCount + 1;
     	    	    	    player2Shoot = player2ShootGroup.create(player2.x + 25, player2.y - 25, 'star2');
@@ -440,7 +440,7 @@ window.onload = function()
     	    	    player2.body.velocity.y = -200 * moveUp2;
     	    	    player2.body.velocity.x = -200 * moveUp2;
     	    	    player2.animations.play('left');
-    	    	    if ((game.time.now > player2ShootTime) && enterKey.isDown && player2MaxCount <= player2Max)
+    	    	    if ((game.time.now > player2ShootTime) && enterKey.isDown)
     	    	    {
     	    	    	    player2MaxCount = player2MaxCount + 1;
     	    	    	    player2Shoot = player2ShootGroup.create(player2.x - 25, player2.y - 25, 'star2');
@@ -460,7 +460,7 @@ window.onload = function()
     	    	    player2.body.velocity.y = 200 * moveUp2;
     	    	    player2.body.velocity.x = 200 * moveUp2;
     	    	    player2.animations.play('right');
-    	    	    if ((game.time.now > player2ShootTime) && enterKey.isDown && player2MaxCount <= player2Max)
+    	    	    if ((game.time.now > player2ShootTime) && enterKey.isDown)
     	    	    {
     	    	    	    player2MaxCount = player2MaxCount + 1;
     	    	    	    player2Shoot = player2ShootGroup.create(player2.x + 25, player2.y + 25, 'star2');
@@ -480,7 +480,7 @@ window.onload = function()
     	    	    player2.body.velocity.y = 200 * moveUp2;
     	    	    player2.body.velocity.x = -200 * moveUp2;
     	    	    player2.animations.play('left');
-    	    	    if ((game.time.now > player2ShootTime) && enterKey.isDown && player2MaxCount <= player2Max)
+    	    	    if ((game.time.now > player2ShootTime) && enterKey.isDown)
     	    	    {
     	    	    	    player2MaxCount = player2MaxCount + 1;
     	    	    	    player2Shoot = player2ShootGroup.create(player2.x - 25, player2.y + 25, 'star2');
@@ -499,7 +499,7 @@ window.onload = function()
     	    {
     	    	    player2.body.velocity.y = -200 * moveUp2;
     	    	    player2.frame = 4;
-    	    	    if ((game.time.now > player2ShootTime) && enterKey.isDown && player2MaxCount <= player2Max)
+    	    	    if ((game.time.now > player2ShootTime) && enterKey.isDown)
     	    	    {
     	    	    	    player2MaxCount = player2MaxCount + 1;
     	    	    	    player2Shoot = player2ShootGroup.create(player2.x, player2.y - 25, 'star2');
@@ -518,7 +518,7 @@ window.onload = function()
     	    {
     	    	    player2.body.velocity.y = 200 * moveUp2;
     	    	    player2.frame = 4;
-    	    	    if ((game.time.now > player2ShootTime) && enterKey.isDown && player2MaxCount <= player2Max)
+    	    	    if ((game.time.now > player2ShootTime) && enterKey.isDown)
     	    	    {
     	    	    	    player2MaxCount = player2MaxCount + 1;
     	    	    	    player2Shoot = player2ShootGroup.create(player2.x, player2.y + 25, 'star2');
@@ -537,7 +537,7 @@ window.onload = function()
     	    {
     	    	    player2.body.velocity.x = -200 * moveUp2;
     	    	    player2.animations.play('left');
-    	    	    if ((game.time.now > player2ShootTime) && enterKey.isDown && player2MaxCount <= player2Max)
+    	    	    if ((game.time.now > player2ShootTime) && enterKey.isDown)
     	    	    {
     	    	    	    player2MaxCount = player2MaxCount + 1;
     	    	    	    player2Shoot = player2ShootGroup.create(player2.x - 25, player2.y, 'star2');
@@ -556,7 +556,7 @@ window.onload = function()
     	    {
     	    	    player2.body.velocity.x = 200 * moveUp2;
     	    	    player2.animations.play('right');
-    	    	    if ((game.time.now > player2ShootTime) && enterKey.isDown && player2MaxCount <= player2Max)
+    	    	    if ((game.time.now > player2ShootTime) && enterKey.isDown)
     	    	    {
     	    	    	    player2MaxCount = player2MaxCount + 1;
     	    	    	    player2Shoot = player2ShootGroup.create(player2.x + 25, player2.y, 'star2');
@@ -574,7 +574,7 @@ window.onload = function()
     	    else
     	    {
     	    	    player2.frame = 4;
-    	    	    if ((game.time.now > player2ShootTime) && enterKey.isDown && player2MaxCount <= player2Max)
+    	    	    if ((game.time.now > player2ShootTime) && enterKey.isDown)
     	    	    {
     	    	    	    player2MaxCount = player2MaxCount + 1;
     	    	    	    player2Shoot = player2ShootGroup.create(player2.x, player2.y + 25, 'star2');
