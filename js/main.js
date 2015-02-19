@@ -1,23 +1,14 @@
 window.onload = function()
 {
-    // You might want to start with a template that uses GameStates:
-    //     https://github.com/photonstorm/phaser/tree/master/resources/Project%20Templates/Basic
-    
-    // You can copy-and-paste the code from any of the examples at http://examples.phaser.io here.
-    // You will need to change the fourth parameter to "new Phaser.Game()" from
-    // 'phaser-example' to 'game', which is the id of the HTML element where we
-    // want the game to go.
-    // The assets (and code) can be found at: https://github.com/photonstorm/phaser/tree/master/examples/assets
-    // You will need to change the paths you pass to "game.load.image()" or any other
-    // loading functions to reflect where you are putting the assets.
-    // All loading functions will typically all be found inside "preload()".
+    // William CS 325 Digital Assignment #3
+    //Murder with Revenge
     
     "use strict";
     
     var game = new Phaser.Game( 1024, 576, Phaser.AUTO, 'game', { preload: preload, create: create, update: update, render: render} );
    
  
-    function preload()
+    function preload() //load assets
     {
     	    game.load.image( 'back', 'assets/back.png' )
     	    game.load.image( 'b1', 'assets/b1.png' )
@@ -45,7 +36,7 @@ window.onload = function()
     	    game.load.audio('death', 'assets/death.mp3');
     	    
     }
-    
+    //variables
     var player1;
     var player2;
     var b1;
@@ -102,7 +93,7 @@ window.onload = function()
     var music;
     var death;
     
-    function create()
+    function create() //create game objects needed to start
     {
     	    game.physics.startSystem(Phaser.Physics.ARCADE);
     	    game.world.setBounds(0, 0, 1024, 576);
@@ -195,7 +186,7 @@ window.onload = function()
 
     }
     
-    function fullScreenStart()
+    function fullScreenStart() //fullscreen and pause mode
     {
     	    if (game.scale.isFullScreen)
     	    {
@@ -209,7 +200,7 @@ window.onload = function()
     	    }
     }
     
-    function update()
+    function update() //check every frame
     {
     	  
 
@@ -242,7 +233,8 @@ window.onload = function()
     	     game.physics.arcade.overlap(player2, b2, player2Rate, null, this);
     	     game.physics.arcade.overlap(player2, b3, player2Speed, null, this);
     	     
-    	    
+    	    //movement keys
+    	    //Possible bug with shoot key not working for all 8 directions on some systems.
     	    player1.body.velocity.x = 0;
     	    player1.body.velocity.y = 0;
     	    if (wKey.isDown && dKey.isDown)
@@ -601,13 +593,13 @@ window.onload = function()
        
     }
     
-    function render()
+    function render() //housekeeping
     {
     	    //game.debug.cameraInfo(game.camera, 500, 32);
     	    //game.debug.spriteCoords(game.camera, 32, 32);
     }
     
-    function killPlayer1(player, shot)
+    function killPlayer1(player, shot) //kill player one and reset
     {
     	    death.play();
     	    shot.destroy();
@@ -617,7 +609,7 @@ window.onload = function()
     	    player1Killed = player1Killed + 1;
     }
     
-    function killPlayer2(player, shot)
+    function killPlayer2(player, shot) //kill player two and reset
     {
     	    death.play();
     	    shot.destroy();
@@ -627,17 +619,17 @@ window.onload = function()
     	    player2Killed = player2Killed + 1;
     }
     
-    function player1Blood()
+    function player1Blood() //add some garnish to the death
     {
     	    game.add.sprite(player1.x, player1.y, bloodDict[game.rnd.integerInRange(0, 8)]);
     }
     
-     function player2Blood()
+     function player2Blood() //add some garnish to the death
     {
     	    game.add.sprite(player2.x, player2.y, bloodDict[game.rnd.integerInRange(0, 8)]);
     }
     
-    function player1Move()
+    function player1Move() //movement rate powerup for player one
     {
     	    if (game.time.now > b1Time)
     	    {
@@ -651,7 +643,7 @@ window.onload = function()
     	    }
     }
     
-    function player1Rate()
+    function player1Rate() //firing rate powerup for player one
     {
     	    if (game.time.now > b2Time)
     	    {
@@ -665,7 +657,7 @@ window.onload = function()
     	    }
     }
     
-    function player1Speed()
+    function player1Speed() //speed rate powerup for player one
     {
     	    if (game.time.now > b3Time)
     	    {
@@ -679,7 +671,7 @@ window.onload = function()
     	    }
     }
     
-    function player2Move()
+    function player2Move() //movement rate powerup for player two
     {
     	    if (game.time.now > b1Time)
     	    {
@@ -693,7 +685,7 @@ window.onload = function()
     	    }
     }
     
-    function player2Rate()
+    function player2Rate() //firing rate rate powerup for player two
     {
     	    if (game.time.now > b2Time)
     	    {
@@ -707,7 +699,7 @@ window.onload = function()
     	    }
     }
     
-    function player2Speed()
+    function player2Speed() //speed rate powerup for player two
     {
     	    if (game.time.now > b3Time)
     	    {
@@ -721,7 +713,7 @@ window.onload = function()
     	    }
     }
     
-    function resetMove1()
+    function resetMove1() //remove movement boost after 7 seconds for player 1
     {
     	    moveUp = 1.0;
     	    moveB.x = -500;
@@ -729,7 +721,7 @@ window.onload = function()
     	    moveText.destroy();
     }
     
-     function resetRate1()
+     function resetRate1() //remove firing rate boost after 7 seconds for player 1
     {
     	    rateUp = 1.0;
     	    rateB.x = -500;
@@ -737,7 +729,7 @@ window.onload = function()
     	    rateText.destroy();
     }
     
-     function resetSpeed1()
+     function resetSpeed1() //remove speed boost after 7 seconds for player 1
     {
     	    speedUp = 1.0;
     	    speedB.x = -500;
@@ -745,7 +737,7 @@ window.onload = function()
     	    speedText.destroy();
     }
     
-     function resetMove2()
+     function resetMove2() //remove movement boost after 7 seconds for player 2
     {
     	    moveUp2 = 1.0;
     	    moveB.x = -500;
@@ -753,7 +745,7 @@ window.onload = function()
     	    moveText.destroy();
     }
     
-     function resetRate2()
+     function resetRate2() //remove firing rate boost after 7 seconds for player 2
     {
     	    rateUp2 = 1.0;
     	    rateB.x = -500;
@@ -761,7 +753,7 @@ window.onload = function()
     	    rateText.destroy();
     }
     
-     function resetSpeed2()
+     function resetSpeed2() //remove speed boost after 7 seconds for player 2
     {
     	    speedUp2 = 1.0;
     	    speedB.x = -500;
