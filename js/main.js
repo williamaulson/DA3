@@ -243,7 +243,7 @@ window.onload = function()
     	    bloodDict[8] = 'b9';
     	    
     	    statusText = game.add.text(15, 10, 'Player 2 Kills: ' + player2Killed, titleStyle);
-    	    statusText2 = game.add.text(800, 10, 'Player 1 Kills: ' + player1Killed, titleStyle);
+    	    statusText2 = game.add.text(850, 10, 'Player 1 Kills: ' + player1Killed, titleStyle);
     	    
     	    
     	    
