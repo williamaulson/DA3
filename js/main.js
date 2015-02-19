@@ -162,6 +162,7 @@ window.onload = function()
     var rateText;
     var speedText;
     var statusStyle = { font: "13px Arial", fill: "#333300", align: "center" };
+    var titleStyle = { font: "20px Arial", fill: "#000000", align: "center" };
     
     function create()
     {
@@ -238,6 +239,12 @@ window.onload = function()
     	    bloodDict[6] = 'b7';
     	    bloodDict[7] = 'b8';
     	    bloodDict[8] = 'b9';
+    	    
+    	    statusText = game.add.text(15, 10, 'Player 2 Kills: ' + player2Killed, titleStyle);
+    	    statusText2 = game.add.text(900, 10, 'Player 1 Kills: ' + player1Killed, titleStyle);
+    	    
+    	    
+    	    
     	    
     	    
     	    /*
@@ -458,6 +465,9 @@ window.onload = function()
     	    	    player2ShootTime = game.time.now + 300;
     	    }*/
 
+    	     statusText.setText('Player 2 Kills: ' + player2Killed);
+    	     statusText2.setText('Player 1 Kills: ' + player1Killed);
+    	    
     	     game.physics.arcade.collide(player1, w1, null, null, this);
     	     game.physics.arcade.collide(player1, w2, null, null, this);
     	     game.physics.arcade.collide(player1, w3, null, null, this);
@@ -912,7 +922,7 @@ window.onload = function()
     	    	    speedB.x = b3.x;
     	    	    speedB.y = b3.y;
     	    	    speedUp = 1.5;
-    	    	    speedText = game.add.text(274, 550, 'Rate Boost!', statusStyle);
+    	    	    speedText = game.add.text(274, 550, 'Speed Boost!', statusStyle);
     	    	    speedText.anchor.set(0.5);
     	    	    game.time.events.add(Phaser.Timer.SECOND * 7, resetSpeed1, null);
     	    	    b3Time = game.time.now + 7000;
